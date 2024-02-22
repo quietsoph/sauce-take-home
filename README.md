@@ -1,3 +1,2 @@
 # Sauce Technical Task
 
-## Introduction
