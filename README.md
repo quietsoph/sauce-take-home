@@ -14,15 +14,15 @@ It is worthwhile taking ~10-15 minutes to familiarize yourself with the codebase
 To become familiar with the repository here's the general structure
 
 #### Server
-1. ai - This package contains the AI types, client and prompt functions.
-2. gql - This package contains the GraphQL schema and resolvers.
-3. service - This package contains the executed logic.
-4. store - This package contains the data store (in-memory sqlite3).
-5. main.ts - The entry point of the graphql server.
+- ai - This package contains the AI types, client and prompt functions.
+- gql - This package contains the GraphQL schema and resolvers.
+- service - This package contains the executed logic.
+- store - This package contains the data store (in-memory sqlite3).
+- main.ts - The entry point of the graphql server.
 
 #### UI
-1. feedback - This package contains the feedback list and the relevant graphql queries.
-2. App.tsx - The entry point of the UI.
+- feedback - This package contains the feedback list and the relevant graphql queries.
+- App.tsx - The entry point of the UI.
 
 ## Running the project
 
