@@ -53,7 +53,7 @@ cd ui && npm install && npm run dev
 
 
 
-# Queries
+# GraphQL Queries
 These queries are helpful for populating and fetching data.
 
 ```graphql
