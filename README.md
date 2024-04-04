@@ -35,19 +35,20 @@ npm install -g dotenv-cli
 
 ```bash
 # 3. Run the server
-cd server && npm run dev
+cd server && npm install && npm run dev
 ```
 
 ### UI
 
 ```bash
 # 1. Run the UI
-cd ui && npm run dev
+cd ui && npm install && npm run dev
 ```
 
 
 
 # Queries
+These queries are helpful for populating and fetching data.
 
 ```graphql
 # Create a feedback record
