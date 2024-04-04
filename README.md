@@ -14,7 +14,7 @@ It is worthwhile taking ~10-15 minutes to familiarize yourself with the codebase
 To become familiar with the repository here's the general structure
 
 #### Server
-1. ai - This package contains the AI models, client and prompt functions.
+1. ai - This package contains the AI types, client and prompt functions.
 2. gql - This package contains the GraphQL schema and resolvers.
 3. service - This package contains the executed logic.
 4. store - This package contains the data store (in-memory sqlite3).
