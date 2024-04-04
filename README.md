@@ -1,6 +1,12 @@
 # Sauce Technical Task
 This repository contains the code for the Sauce technical task. 
-This project is only partially implemented. 
+This project is only partially implemented.
+
+The project consists of a GraphQL server that exposes some queries and mutations to create and fetch feedback records.
+A feedback record is simply some text with some form of product feedback. \
+e.g. "The UI is too cluttered, I can't find the settings page." would be a feedback record explaining an issue someone is facing with a product.
+
+The UI is a simple React application that renders a list of feedback records.
 
 It is worthwhile taking ~10-15 minutes to familiarize yourself with the codebase before the interview.
 
