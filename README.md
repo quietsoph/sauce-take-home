@@ -39,7 +39,8 @@ Make changes in order to implement the following: \
 
 ```bash
 # 1. Creates the .env file with the OpenAI secret placeholder.
-echo "OPENAI_SECRET=\"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\"" > server/.env
+#    Make sure to replace <shared-secret-key> with the secret that was shared with you.
+echo "OPENAI_SECRET=\"<shared-secret-key>\"" > server/.env
 ```
 
 ```bash
