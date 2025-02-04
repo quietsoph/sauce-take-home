@@ -1,6 +1,8 @@
 # Sauce Technical Task
-This repository contains the code for the Sauce technical task. 
-This project is only partially implemented.
+
+
+## The Project
+This repository is a simplified and partial implementation of Sauce.
 
 The project consists of a GraphQL server that exposes some queries and mutations to create and fetch feedback records.
 A feedback record is simply some text with some form of product feedback. \
@@ -8,16 +10,16 @@ e.g. "The UI is too cluttered, I can't find the settings page." would be a feedb
 
 The UI is a simple React application that renders a list of feedback records.
 
-It is worthwhile taking ~10-15 minutes to familiarize yourself with the codebase before the interview.
+# Tips
+The source code at Source follows similar architecture and coding patterns. Having some familarity and understanding for how to debug and explore the application will be seen as a strong plus. Take some time to read up on GraphQL, TypeScript and React. In particular try and build an awareness of the GraphQL request cycle and how it has been implemented within the context of this repository. What are the key files to examine in the client - server interaction? how would you debug an issue across the stack? have a play with the GraphQL playground (check your server logs when you boot up the application) when trying to think about the questions.   
 
-## What to do
-To become familiar with the repository here's the general structure
+## Structure
 
 #### Server
 - ai - This package contains the AI types, client and prompt functions.
 - gql - This package contains the GraphQL schema and resolvers.
 - service - This package contains the executed logic.
-- store - This package contains the data store (in-memory sqlite3).
+- store - This package contains and interfaces with the data store (in-memory sqlite3).
 - main.ts - The entry point of the graphql server.
 
 #### UI
@@ -30,8 +32,7 @@ To become familiar with the repository here's the general structure
 
 ```bash
 # 1. Creates the .env file with the OpenAI secret placeholder.
-#    We will provide this value in the interview.
-echo "OPENAI_SECRET=\"<replace-with-secret>\"" > server/.env
+echo "OPENAI_SECRET=\"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\"" > server/.env
 ```
 
 ```bash
@@ -51,9 +52,13 @@ cd server && npm install && npm run dev
 cd ui && npm install && npm run dev
 ```
 
+# API
 
+You can access the GraphQL playground at
+[http://localhost:4000/graphql](http://localhost:4000/graphql)
+and run the sample queries below.
 
-# GraphQL Queries
+## Sample Queries
 These queries are helpful for populating and fetching data.
 
 ```graphql
