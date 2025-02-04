@@ -10,8 +10,15 @@ e.g. "The UI is too cluttered, I can't find the settings page." would be a feedb
 
 The UI is a simple React application that renders a list of feedback records.
 
-# Tips
-The source code at Source follows similar architecture and coding patterns. Having some familarity and understanding for how to debug and explore the application will be seen as a strong plus. Take some time to read up on GraphQL, TypeScript and React. In particular try and build an awareness of the GraphQL request cycle and how it has been implemented within the context of this repository. What are the key files to examine in the client - server interaction? how would you debug an issue across the stack? have a play with the GraphQL playground (check your server logs when you boot up the application) when trying to think about the questions.   
+## The Task
+Make changes in order to implement the following: \
+\
+**- Persist the generated highlights in the db (SQLite)** \
+**- Display the highlights along with the parent feedback in the rendered list** \
+**- Add pagination to the rendered feedback list**
+
+**Bonus** \
+**- Allow bulk creation without having the API waiting for highlight creation**
 
 ## Structure
 
