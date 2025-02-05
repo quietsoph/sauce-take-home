@@ -7,7 +7,8 @@ const sqlSchema = `
     CREATE TABLE IF NOT EXISTS Feedback
     (
         id   INTEGER PRIMARY KEY,
-        text TEXT
+        text TEXT,
+        status TEXT
     );
 
     CREATE TABLE IF NOT EXISTS Highlight

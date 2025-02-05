@@ -14,7 +14,14 @@ const typeDefs = /* GraphQL */ `
   type Feedback {
     id: Int!
     text: String!
+    status: FeedbackStatus!
     highlights: [Highlight!]
+  }
+  
+  enum FeedbackStatus {
+    PENDING_ANALYSIS
+    ANALYSIS_COMPLETED
+    ANALYSIS_FAILED
   }
 
   type Highlight {

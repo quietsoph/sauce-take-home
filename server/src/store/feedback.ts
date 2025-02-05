@@ -1,5 +1,5 @@
 import db from "./db";
-
+import { FeedbackStatus } from "./model";
 type CreateHighlightArgs = {
   feedbackId: number | bigint;
   highlightSummary: string;
@@ -56,11 +56,19 @@ const countFeedback = (): number => {
  * @param text The text of the feedback
  */
 const createFeedback = async (text: string) => {
-  const result = db.prepare(`INSERT INTO Feedback (text)
-                             VALUES (?)`).run(text);
-  return {id: result.lastInsertRowid, text}
+  const result = db.prepare(`INSERT INTO Feedback (text, status)
+                             VALUES (?, ?)`).run(text, FeedbackStatus.PENDING_ANALYSIS);
+  return {id: result.lastInsertRowid, text, status: FeedbackStatus.PENDING_ANALYSIS}
 }
 
+/**
+ * Updates the status of a feedback entry
+ * @param id The id of the feedback
+ * @param status The status to update the feedback to
+ */
+const updateFeedbackStatus = async (id: number, status: FeedbackStatus) => {
+  db.prepare(`UPDATE Feedback SET status = ? WHERE id = ?`).run(status, id);
+}
 /**
  * Creates a new highlight entry
  * @param args The arguments to create a highlight
@@ -75,6 +83,7 @@ export default {
   getFeedback,
   getFeedbackPage,
   createFeedback,
+  updateFeedbackStatus,
   createHighlight,
   getFeedbackHighlights,
 };
