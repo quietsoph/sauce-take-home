@@ -33,6 +33,7 @@ const typeDefs = /* GraphQL */ `
   type FeedbackPage {
     values: [Feedback!]!
     count: Int!
+    numPages: Int!
   }
 `;
 

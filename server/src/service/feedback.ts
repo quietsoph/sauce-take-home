@@ -7,6 +7,10 @@ import { Feedback, FeedbackStatus } from "../store/model";
  * @param text The feedback to create
  */
 const createFeedback = async (text: string) => {
+  if (!text || text.trim() === '') {
+    throw new Error('Feedback text cannot be empty');
+  }
+
   const feedback = await feedbackStore.createFeedback(text);
  
   createHighlightsForFeedback(feedback as Feedback).catch((error) => {
@@ -47,9 +51,14 @@ const createHighlightsForFeedback = async (feedback: Feedback) => {
  * @param perPage The number of entries per page
  */
 const getFeedbackPage = async (page: number, perPage: number) => {
-  const values = await feedbackStore.getFeedbackPage(page, perPage);
+  const [values, total] = await Promise.all([
+    feedbackStore.getFeedbackPage(page, perPage),
+    feedbackStore.countFeedback()
+  ]);
   const count = values.length;
-  return {values, count};
+  const numPages = Math.ceil(total / perPage);
+
+  return {values, count, numPages};
 }
 
 export default {

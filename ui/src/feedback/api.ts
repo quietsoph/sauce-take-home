@@ -18,6 +18,7 @@ const feedbacksDocument = gql`
       values {
         id
         text
+        status
         highlights {
           id
           quote
@@ -25,11 +26,12 @@ const feedbacksDocument = gql`
         }
       }
       count
+      numPages
     }
   }
 `
 
-type FeedbacksData = { feedbacks: { values: Feedback[], count: number } }
+type FeedbacksData = { feedbacks: { values: Feedback[], count: number, numPages: number } }
 export const feedbacksQuery = (page: number, per_page: number): Promise<FeedbacksData> =>
   request('http://localhost:4000/graphql', feedbacksDocument, {
     page,

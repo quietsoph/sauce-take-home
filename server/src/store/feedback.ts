@@ -86,4 +86,5 @@ export default {
   updateFeedbackStatus,
   createHighlight,
   getFeedbackHighlights,
+  countFeedback,
 };
