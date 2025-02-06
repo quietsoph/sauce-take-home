@@ -1,5 +1,27 @@
 # Sauce Technical Task
 
+## What I've implemented:
+1. Persist highlights in the database
+2. Add feedback validation and state tracking
+    - Add check to ensure feedback text is not empty before saving.
+    - Each feedback will one of three states: PENNDING_ANALYSIS, ANALYSIS_COMPLETED, ANALYSIS_FAILED. By doing so, it allows for better visibility of analysis state for each feedback and ability to identify and retry failed analyses.
+3. Decoupled feedback creation from highlight generation
+    - Create feedbacks without being blocked by highlight generation.
+    - Highlights are created concurrently, improving response time.
+4. Balance between information density and readability
+    - Display the highlights along with the parent feedback in the rendered list.
+    - Implement pagination to the feedbacks list.
+    - Add "See more/less" text expansion for cleaner interface
+    - Add maximum width and minimum width to the feedbacks list to improve readability.
+
+  **[Showcase](https://drive.google.com/file/d/17gH7ldgDyKkh7lsbjx8ZHibs9hYE5WrL/view?usp=drive_link)**
+
+## Some ideas to improve the app:
+- Add a category field to each highlight (e.g. "UI Issue", "Performance", "Feature Request") to better organize feedback.
+- Group similar highlights by their categories and show how many times each issue appears across all feedback.
+- Add a search bar to search for feedbacks and highlights by text.
+- Add a "Retry" button to the feedbacks that failed to be analyzed or pending to be analyzed.
+
 
 ## The Project
 This repository is a simplified and partial implementation of Sauce.
